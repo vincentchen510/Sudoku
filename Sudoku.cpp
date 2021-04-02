@@ -5,11 +5,10 @@ int sudoku[9][9];
 //並分別從垂直,水平,以及小格子內搜尋並判斷當前數字是否符合要求
 //一旦發現不符合就return false
 //如果都沒有發現就return true
+int x;
+int y;
 bool Test(int count)
 {
-
-	int y = count / 9;
-	int x = count % 9;
 	//水平檢查
 	for (int i = 0; i < 9; ++i)
 		if (sudoku[y][i] == sudoku[y][x] && i != x)
@@ -44,8 +43,8 @@ void guess(int count)
 		}
 		return;
 	}
-	int y = count / 9;
-	int x = count % 9;
+	y = count / 9;
+	x = count % 9;
 	if (sudoku[y][x] == 0)
 	{
 		for (int i = 1; i <= 9; ++i)
